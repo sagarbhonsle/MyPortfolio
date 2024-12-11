@@ -102,7 +102,7 @@ header h1 {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 30px;
+  gap: 100px;
   margin: 120px 20px; /* Adds space above cards */
   padding: 20px;
 }
