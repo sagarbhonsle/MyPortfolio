@@ -1,0 +1,294 @@
+/* General Styling */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #000;
+  color: #fff;
+  line-height: 1.6;
+}
+
+/* Header Section */
+header {
+  text-align: center;
+  padding: 20px;
+  background: #222;
+  color: #00bcd4;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+}
+
+.social-links {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.social-icon {
+  width: 30px;
+  height: 30px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.social-icon:hover {
+  transform: scale(1.2);
+  filter: brightness(1.5);
+}
+
+/* Profile Section */
+.profile {
+  text-align: center;
+  margin: 40px auto;
+  max-width: 800px;
+}
+
+.photo-container {
+  position: relative;
+  display: inline-block;
+}
+
+.profile-photo {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  border: 3px solid #00bcd4;
+  transition: transform 0.3s ease;
+}
+
+.profile-photo:hover {
+  transform: scale(1.1);
+}
+
+.profile-card {
+  position: absolute;
+  top: 50%;
+  left: 200px;
+  transform: translateY(-50%);
+  background: #222;
+  color: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  display: none;
+}
+.profile-card h2 {
+  margin: 0;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.profile-card h2 span {
+  display: block;
+}
+
+/* Popup message styling */
+.profile-photo:hover + .profile-card {
+  display: block;
+}
+
+/* Summary Section */
+.summary {
+  text-align: justify;
+  margin: 60px auto; /* Adds space above and below */
+  padding: 0 20px; /* Adds padding for readability */
+  max-width: 800px; /* Keeps summary width consistent */
+}
+
+/* Cards Section */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin: 120px 20px; /* Adds space above cards */
+  padding: 20px;
+}
+
+.card {
+  perspective: 1000px;
+  width: 250px;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.card .front,
+.card .back {
+  position: absolute;
+  width: 100%;
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  backface-visibility: hidden;
+  transition: transform 0.5s ease-in-out;
+  overflow: auto;
+  word-wrap: break-word;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+.card .front {
+  background: #00bcd4;
+  color: #000;
+  transform: rotateY(0deg);
+}
+
+.card .back {
+  background: #222;
+  color: #fff;
+  transform: rotateY(180deg);
+}
+
+.card:hover .front {
+  transform: rotateY(-180deg);
+}
+
+.card:hover .back {
+  transform: rotateY(0deg);
+}
+
+.card p {
+  margin: 5px 0;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  text-align: left;
+}
+
+/* Experience Section */
+.experience {
+  text-align: center;
+  margin-top: 100px; /* Increased space above the experience section */
+  padding-bottom: 50px;
+}
+
+.roadmap {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 20px;
+}
+
+.checkpoint {
+  width: 30px;
+  height: 30px;
+  background-color: #00bcd4;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.checkpoint.active {
+  background-color: #007c91;
+}
+
+.checkpoint:hover {
+  background-color: #007c91;
+}
+
+.experience-cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.experience-card {
+  display: none;
+  width: 550px;
+  background-color: #222;
+  color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.experience-card.active {
+  display: block;
+}
+
+.experience-card h3 {
+  margin-top: 0;
+}
+
+.experience-card p {
+  margin-top: 10px;
+}
+
+/* Footer Section */
+footer {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+footer img {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+footer img:hover {
+  transform: scale(1.2);
+  filter: brightness(1.5);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2rem;
+  }
+
+  .profile-photo {
+    width: 120px;
+    height: 120px;
+  }
+
+  .profile-card {
+    left: auto;
+    right: auto;
+    top: calc(100% + 10px);
+    transform: translateY(0);
+    width: 90%;
+  }
+
+  .cards {
+    gap: 20px;
+    padding: 15px;
+  }
+
+  .card {
+    width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .summary {
+    font-size: 1rem;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    padding: 0 15px;
+  }
+
+  footer img {
+    width: 25px;
+    height: 25px;
+  }
+}
